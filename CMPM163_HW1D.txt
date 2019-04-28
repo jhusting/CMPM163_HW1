@@ -1,0 +1,7 @@
+https://imgur.com/a/kFsFJcG
+
+The effect in the image is a stylized depiction of fire in a game called Rime. The effect is cool because it makes fire look very stylized and almost cel-shaded, which is very unintuitive for something flat like fire. This effect is made on a billboarded plane, so it always faces the camera. The effect itself is emmissive so it does not react to lighting. Instead of changing the pixels on the screen this effect mostly edits the texture itself. 
+
+So I picked this because I like it, but mostly because there are a couple GDC talks the developer gave on how to make it in Unreal. However, Unreal uses a different language for it's shader code (material blueprints), so there aren't any tutorials for a HLSL version. However, you can convert the blueprint code into HLSL code if you are familiar with both languages.
+
+The way it works is like this: they pan two different noise functions and add them together, and multiply that with a masking texture to isolate the area of the fire. This is then used to distort the UV's which will change the shape of a ringed texture and give the fire a tiered look. Using each channel (red, blue, and green), they then multiply input parameter colors and combine them into another texture to get the final fire color.
